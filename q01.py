@@ -1,4 +1,7 @@
 ##
-## Imprima la cantidad de registros por cada letra 
-## de la columna _c1 de la tabla tbl0
-## 
+# Imprima la cantidad de registros por cada letra
+# de la columna _c1 de la tabla tbl0
+##
+import pandas as pd
+table = pd.read_csv("tbl0.tsv", sep='\t')
+print(table.groupby('_c1')['_c1'].count())
